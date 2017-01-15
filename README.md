@@ -7,9 +7,9 @@ The training dataset is in file ./UCI HAR Dataset/train/X_train.txt
 
 The test set is in file ./UCI HAR Dataset/test/X_test.txt
 
-The corresponding activity labels are file y_train.txt and y_test.txt
+The activity labels for training data set and test data set are file y_train.txt and y_test.txt
 
-tidy_data.txt is the output file
+tidy_data.txt is the new data set which has the average of each variable for each activity and each subject
 
 CodeBook.md explains the dataset cleaning process
 
