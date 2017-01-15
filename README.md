@@ -29,7 +29,7 @@ read in the subjects from file subject_train.txt and subject_test.txt, store the
 ###Extracts only the measurements on the mean and standard deviation for each measurement.
 use the select function from package dplyr to select the mean and standard deviation variables from X_train and X_test separately.
 The selection criteria is the column variables which contains ".std.." or ".mean.."
-##Name the activities in the data set
+###Name the activities in the data set
 use function factor() to convert the activity labels in y_train and y_test, which are represented as integer, to factors.
 The labels of the factors are read in from file activity_labels.txt 
 
