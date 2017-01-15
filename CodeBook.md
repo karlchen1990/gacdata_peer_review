@@ -1,28 +1,16 @@
 #CodeBook for peer review assignment of coursera course get and clean data
-The following steps are taken to clean up the data set
-##read in all the related files
-read in the feature names from file features.txt using function read.table and extract it as a character vector named feature_names_vector
-
-read in the training data set from file X_train.txt and test data set from X_test.txt, specify the col.names option with feature_names_vector
-Call the read in datset with names X_train,X_test
-notice that the feature names contain some syntatically invalid symbols like "-", "(",")", they will be converted by function read.table to a dot.
-
-read in the activity labels from file y_train.txt and y_test.txt, call them y_train, y_test
-read in the subjects from file subject_train.txt and subject_test.txt, store them as subject_train, subject_test
-##Extracts only the measurements on the mean and standard deviation for each measurement.
-use the select function from package dplyr to select the mean and standard deviation variables from X_train and X_test separately.
-The selection criteria is the column variables which contains ".std.." or ".mean.."
-##name the activities in the data set
-use function factor() to convert the activity labels in y_train and y_test, which are represented as integer, to factors.
-The labels of the factors are read in from file activity_labels.txt 
-
-##Appropriately labels the data set with descriptive variable names.
-column bind the training data set(X_train) and test data set(X_test) separately with the activity labels (y_train and y_test), 
-and subjects (subject_train,subject_test) using function bind_cols
-
-##Merges the training and the test sets to create one data set.
-row binds the labeled training data set and test set and store them as a data fram called complete_dataset
-
-##creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-use function group_by() to group the combined data frame complete_dataset by subject and activity. Then use function summarise_all to get the mean value
-of each variable for each activity and subject group 
+feature_names: data frame which contains the content read back from file features.txt
+feature_names_vector: a character vector which contains the all feature names as in data frame feature_names
+X_train: data frame which contains training data set 
+y_train: data frame which contains training data set labels,that is, the activity subjects took
+X_test: data frame which contains test data set
+y_test: data frame which contains test data set labels
+subject_train: data frame which has the subjects who do the activities in training data set
+subject_test: data frame which has the subjects who do the activities in test data set
+X_train_tbl_select:data frame of training data set after selecting the mean and std columns 
+X_test_tbl_select:data frame of test data set after selecting the mean and std columns 
+activity_labels:data frame contains activity labels read from file activity_labels.txt
+X_train_dataset: labeld training dataset
+X_test_dataset: labeld test dataset
+complete_dataset: data set which contains training and test data set 
+analysis_result: a tidy data set with the average of each variable for each activity and each subject
